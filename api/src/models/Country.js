@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
       unique: true,
     },
     img: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     continente: {
@@ -30,13 +30,12 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
     },
     area: {
-      type: DataTypes.STRING,
+      type: DataTypes.FLOAT,
     },
     poblacion: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.INTEGER,
     }
   });
-  Country.sync({force: true})
-    .then (()=> console.log("HOLAPUTO"))
+  // Country.sync({force: true})
+  //  .then (()=> console.log("COUNTRY SYNC"))
 };
