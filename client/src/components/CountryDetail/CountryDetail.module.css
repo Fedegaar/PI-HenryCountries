@@ -1,0 +1,61 @@
+
+.Background{
+    background-size:cover;
+    background-image:url('https://images.ecestaticos.com/gX65a8RCnHIW0FN7tUQaB_YgeKs=/1x67:1253x769/1600x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fcd1%2F58c%2F368%2Fcd158c368dc7be563cef8eb4bd65071b.jpg');
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+        
+}
+
+    .Cardback{
+        margin-top: 100px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        background-color: transparent;
+        border-radius: 15px;
+        width: 500px;
+        height: 550px;
+        border: 4px solid black;
+        box-shadow: 1px -1px 19px 8px rgba(0,0,0,1);
+        backdrop-filter: blur(7px);
+    }
+
+    .Name{
+        font-size: 40px;
+        color:white;
+        
+    }
+
+    .ID{
+        color:white;
+    }
+
+    .Capital{
+        color:white;
+    }
+
+    .Continent{
+        color:white;
+    }
+
+    .Subregion{
+        color:white;
+    }
+
+    .Area{
+        color:white;
+    }
+
+    .Population{
+        color:white;
+    }
+
+    .Activities{
+        color:white;
+    }
+    
+
+
+

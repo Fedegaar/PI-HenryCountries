@@ -1,0 +1,27 @@
+.DivMayor{
+    background-color: rgb(46, 46, 46);
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;        
+}
+
+
+.DivImg{
+   display: flex;
+   left: 80px;   
+}
+
+.Titulo{
+    display: flex;            
+}
+
+.DivAct{
+    left: 90%;
+    padding-top: 10px;
+    color: white;
+}
+
+.DivSearch{
+    padding-right: 50px;
+    align-self: center;
+}

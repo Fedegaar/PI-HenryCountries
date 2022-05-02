@@ -1,0 +1,39 @@
+.Contenedor{
+    background: linear-gradient(to right, transparent, transparent); 
+    display: flex;
+}
+.Nav{
+width: 100%;
+}
+
+.Pag{
+    display: inline-block;
+    padding: 0;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    /* display: flex;
+    justify-content: space-evenly;
+    margin-left: 40%;
+    margin-right: 40%; */
+}
+
+.Li{
+    display: inline;
+    border-radius: 5px;    
+    
+}
+
+.num{   
+    color:rgb(255, 255, 255);  
+    background-color:transparent;    
+    float: left;
+    font-size: 20px;
+    padding: 8px 12px;
+    margin-right: 1px;
+    margin-left:5px;    
+    border: solid 1px rgb(255, 255, 255);
+    border-radius: 8px;
+    flex-wrap: wrap;
+    backdrop-filter: blur(20px);
+    
+}

@@ -1,4 +1,5 @@
 const { Router } = require ('express')
+const { Op } = require ('sequelize')
 const { Country, Activity } = require('../db');
 const router = Router();
 const axios = require ('axios');
@@ -7,7 +8,7 @@ const axios = require ('axios');
 
 router.get('/', async (req, res, next) => {
     const { name } = req.query
-    //[Op.iLike]: `%${name}%`   
+      
     
         let allInfo = await axios.get('https://restcountries.com/v3/all')        
     const promises = allInfo.data?.map(e => {
@@ -18,9 +19,9 @@ router.get('/', async (req, res, next) => {
                     id : e.cca3,           
                     name : e.name.common,                    
                     img : e.flags[1],
-                    continente: e.continents[0],
+                    continent: e.continents[0],
                     capital: e.capital ? e.capital[0] : "",
-                    poblacion: e.population,
+                    population: e.population,
                     subregion: e.subregion || "",
                     area: e.area,
                 },
@@ -32,17 +33,28 @@ router.get('/', async (req, res, next) => {
     await Promise.all(promises)    
     let allCountries = await Country.findAll()
     res.send(allCountries);
-} else {    
+} else { 
+    try{   
     let searchCountry = await Country.findOne({        
         where: {
-            name:name,
+            name:{
+            [Op.iLike]: `%${name}%` 
+        }
         },
         include:{
             model : Activity                    
         } 
     })
-    // console.log("Soy el console log: ", searchCountry)
-    res.json(searchCountry)
+    
+        res.send(searchCountry)
+     
+} catch (err){
+    if(error.response.status === 404){
+        res.send({message: 'Country not found'})
+    } else {
+        next(err)
+    }
+}
 }            
 
 });
@@ -73,7 +85,7 @@ router.get('/:code', async (req, res, next) => {
             img : country.flags[1],
             continente: country.continents[0],
             capital: country.capital ? country.capital[0] : "",
-            poblacion: country.population,
+            population: country.population,
             subregion: country.subregion || "",
             area: country.area,
         }

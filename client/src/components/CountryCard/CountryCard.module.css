@@ -1,0 +1,37 @@
+.Cardback{
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: transparent;
+    border-radius: 15px;
+    width: 350px;
+    height: 350px;
+    border: 4px solid black;
+    max-height: 300px;
+    box-shadow: 1px -1px 19px 8px rgba(0,0,0,1);
+    backdrop-filter: blur(7px);
+}
+
+.NNombre {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    
+}
+
+.Nombre{    
+    font-size:26px;
+    text-decoration: none;
+    color: white;
+    margin-top: 15px;
+}
+
+
+.Image{
+    margin-bottom: 20px;
+}
+
+.Continente{
+    font-size: 20px;
+    height: 20%;
+}
