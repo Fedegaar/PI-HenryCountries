@@ -4,25 +4,29 @@ import {getCountries} from '../../redux/actions'
 import CountryCard from '../CountryCard/CountryCard';
 import Paginado from '../Paginado/Paginado';
 import Order from '../Order/Order';
+import Filter from '../Filter/Filter'
+import SearchBar from '../SearchBar/SearchBar';
 import s from './Home.module.css'
 
 
-function Home() {
-  let countries = useSelector(state => state.countries);
+function Home(props) {
+  let countries = useSelector(state => state.sortCountries);
   const dispatch = useDispatch();
 
   // const allCountries = useSelector((s) => s.countries);
   const [currentPage, setcurrentPage] = useState(1);
-  const [countriesPP, setcountriesPP] = useState(10);
+  const [countriesPP, setcountriesPP] = useState(9);
   const indxLastCountry = currentPage * countriesPP;
   const indxFirstCountry = indxLastCountry - countriesPP;
   const currentCountries = countries.slice(indxFirstCountry, indxLastCountry)
 
   const paginado = (pageNum) => {
-    if(currentPage!==0){
-      setcountriesPP(9)
-    }
-    setcurrentPage(pageNum)
+      setcurrentPage(pageNum)
+      if(pageNum === 1){
+        setcountriesPP(9)
+      } else {
+        setcountriesPP(10)
+      }
   }
   
 
@@ -36,6 +40,12 @@ function Home() {
 
     <div className={s.Background}>
         <Order/>
+        <Filter/>
+        <div className={s.DivSearch}>
+              <SearchBar
+              history={props.history}
+              />
+          </div>
         <Paginado
               countriesPP={countriesPP}
               countries={countries.length}

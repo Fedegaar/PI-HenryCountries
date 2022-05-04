@@ -4,7 +4,7 @@ export const GET_COUNTRIES = "GET_COUNTRIES"
 export const GET_COUNTRY_DETAIL = "GET_COUNTRY_DETAIL"
 export const CREATE_ACTIVITY = "CREATE_ACTIVITY"
 export const ORDERED_COUNTRIES = "ORDERED_COUNTRIES"
-export const FILTERED_COUNTRIES = "FILTERED_COUNTRIES"
+export const FILTER_CONTINENTS = "FILTER_CONTINENTS"
 
 
 export const getCountries = () => {
@@ -41,9 +41,9 @@ export const orderedCountries = (order) => {
     }
 }
 
-export const filteredCountries = (payload) => {
+export const filterContinents = (filter) => {
     return {
-        type: FILTERED_COUNTRIES,
-        payload
+        type: FILTER_CONTINENTS,
+        payload:filter
     }
 }

@@ -11,14 +11,14 @@ function SearchBar(props) {
     e.preventDefault();
     if (search.length){
       let response = await getCountryId()
-      console.log(response)
+      
       
       if(response.id){
         props.history.push('/countries/detail/' +response.id)
-        console.log("Entre Al IF")
+        
       } else {
           
-          console.log("Entre Al else")
+          
           alert (response.message)
       }
     }

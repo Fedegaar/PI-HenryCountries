@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import s from './Nav.module.css'
-import IMG from '../../img/PLANETANAV.png'
-import SearchBar from '../SearchBar/SearchBar'
+import IMG from '../../img/image (1).png'
 
 function Nav(props) {
   return (
@@ -10,23 +9,16 @@ function Nav(props) {
           
           
           <div className={s.DivImg}>
-              <Link to ='/home'><img src={IMG} alt= "HOME"/>              
+              <Link to ='/home'><img src={IMG} width={50} alt= "HOME"/>              
               </Link>
           </div>
 
 
 
           <div className={s.DivAct}>
-              <Link to='/countries/create'><span>Create new activity</span></Link>
+              <Link to='/countries/create'><span className={s.DivAct}>NEW ACTIVITY</span></Link>
           </div>
 
-
-
-          <div className={s.DivSearch}>
-              <SearchBar
-              history={props.history}
-              />
-          </div>
           
     </div>
   )

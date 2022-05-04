@@ -1,9 +1,11 @@
 .Contenedor{
     background: linear-gradient(to right, transparent, transparent); 
     display: flex;
+   
 }
 .Nav{
 width: 100%;
+
 }
 
 .Pag{
@@ -24,14 +26,14 @@ width: 100%;
 }
 
 .num{   
-    color:rgb(255, 255, 255);  
+    color: black;  
     background-color:transparent;    
     float: left;
     font-size: 20px;
     padding: 8px 12px;
     margin-right: 1px;
     margin-left:5px;    
-    border: solid 1px rgb(255, 255, 255);
+    border: solid 1px black;
     border-radius: 8px;
     flex-wrap: wrap;
     backdrop-filter: blur(20px);
