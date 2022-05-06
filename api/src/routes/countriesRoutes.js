@@ -45,15 +45,14 @@ router.get('/', async (req, res, next) => {
             model : Activity                    
         } 
     })
-    
-        res.send(searchCountry)
+        if (searchCountry){
+            res.send(searchCountry)
+        } else {
+            res.send({message: 'Country not found'})
+        }
      
 } catch (err){
-    if(error.response.status === 404){
-        res.send({message: 'Country not found'})
-    } else {
-        next(err)
-    }
+    next(err)
 }
 }            
 

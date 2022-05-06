@@ -11,7 +11,7 @@
 
 
 .DivImg{
-    margin-top: 3px;
+    margin-top: 8px;
     display: flex;
     padding-left: 50px;
     left:50px;   
@@ -20,7 +20,7 @@
 .DivAct{
     padding-right: 40px;
     display: flex;
-    padding-top: 8px;
+    padding-top: 4px;
     color: white;
 }
 

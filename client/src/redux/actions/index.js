@@ -47,3 +47,17 @@ export const filterContinents = (filter) => {
         payload:filter
     }
 }
+
+export const createActivity = (body) => {
+    return async function (dispatch) {
+        let result = await axios.post('http://localhost:3001/activity', body)        
+            dispatch ({
+                type: CREATE_ACTIVITY,
+                payload: result.data
+            })        
+            .catch((err) => {
+            console.log(err)
+             });
+    };
+};
+

@@ -8,6 +8,19 @@
     overflow: scroll;
     align-items: center;
 }
+.Filters{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    height: 19px;
+    margin-bottom: 10px;
+}
+
+.Filtersss{
+    border-bottom: 150px;
+    height: 150px;
+}
+
 
 .Load{
     font-size: 80px;
@@ -22,6 +35,6 @@
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 15px;
     grid-row-gap: 15px;
-    padding-left: 8%;
+    padding-left: 5%;
     padding-bottom: 150px;
 }

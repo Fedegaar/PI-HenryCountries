@@ -39,17 +39,24 @@ function Home(props) {
   return (
 
     <div className={s.Background}>
-        <Order/>
-        <Filter/>
+
+        <div className={s.Filters}>
+            <Order className={s.Filterss}/>
+            <Filter className={s.Filtersss}/>
+        </div>
+
+
         <div className={s.DivSearch}>
               <SearchBar
               history={props.history}
               />
           </div>
+
+
         <Paginado
               countriesPP={countriesPP}
               countries={countries.length}
-              paginado={paginado}              />
+              paginado={paginado}/>
         
 
           <div className={s.Cards}>
@@ -68,6 +75,8 @@ function Home(props) {
                   <span className={s.Load}>Loading...</span>
             )}
           </div>
+
+
     </div>
   )
 }

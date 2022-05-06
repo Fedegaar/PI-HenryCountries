@@ -6,7 +6,8 @@ const initialState = {
     activities : [],
     countryDetail: {},
     sortCountries: [],
-    continents: []
+    continents: [],
+    filterContinents : []
 }
 
 export default function reducer (state = initialState, {type, payload}){
@@ -32,7 +33,7 @@ export default function reducer (state = initialState, {type, payload}){
         case CREATE_ACTIVITY:
             return {
                 ...state,
-                activities: payload
+                // activities: state.activities.concat(payload),                
             }
         case ORDERED_COUNTRIES:
             let orderedCountries = [...state.sortCountries]            
@@ -63,14 +64,25 @@ export default function reducer (state = initialState, {type, payload}){
                 }
                 
         case FILTER_CONTINENTS:
-            let continentsfilter = [...state.countries]
-            if (payload !== "CONTINENT"){
-                let result = continentsfilter.filter(e => e.continent === payload)
-   
-                console.log(result)
-                return result
-            }
+            let continentsfilter = [...state.countries]            
+            let matchContinent = [];
+            if (payload !== "ALL"){                
+                for (let i=0 ; i < continentsfilter?.length; i++){                    
+                    if(continentsfilter[i].continent === payload){                        
+                        matchContinent.push(continentsfilter[i])                        
+                    }
+                }
+                return {
+                    ...state,
+                    sortCountries:matchContinent
+                }
+            } else {
 
+                return {
+                    ...state,
+                    sortCountries : state.countries
+                }} 
+                   
 
 
         default : return state

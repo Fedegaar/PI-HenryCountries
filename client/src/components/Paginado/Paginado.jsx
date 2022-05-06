@@ -1,11 +1,11 @@
 import React from 'react';
 import s from './Paginado.module.css'
 
-export default function Paginado({countriesPP, countries, paginado}){
+export default function Paginado({ paginado }){
     const pNumbers = []
 
-    for (let i=0 ; i<=Math.ceil(countries/countriesPP); i++){
-        pNumbers.push(i+1)
+    for (let i=1 ; i<=25; i++){
+        pNumbers.push(i)
     }
 
     return (

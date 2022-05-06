@@ -1,5 +1,5 @@
 .Contenedor{
-    background: linear-gradient(to right, transparent, transparent); 
+    background: linear-gradient(to right, transparent, rgba(45, 45, 45, 0.233)); 
     display: flex;
    
 }
@@ -13,10 +13,10 @@ width: 100%;
     padding: 0;
     margin-bottom: 5px;
     margin-top: 15px;
-    /* display: flex;
+    display: flex;
     justify-content: space-evenly;
     margin-left: 40%;
-    margin-right: 40%; */
+    margin-right: 40%;
 }
 
 .Li{
