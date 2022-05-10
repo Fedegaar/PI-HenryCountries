@@ -1,4 +1,3 @@
-
 .Background{
     height: 100vh;
     background-color: rgb(255, 255, 255);    
@@ -8,19 +7,6 @@
     overflow: scroll;
     align-items: center;
 }
-.Filters{
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    height: 19px;
-    margin-bottom: 10px;
-}
-
-.Filtersss{
-    border-bottom: 150px;
-    height: 150px;
-}
-
 
 .Load{
     font-size: 80px;
@@ -38,3 +24,20 @@
     padding-left: 5%;
     padding-bottom: 150px;
 }
+
+.Btn{
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px;
+    background-color:blue;
+    background-color:black;
+    color: white;
+}
+
+.Btn:hover{
+    background-color:yellow;
+    background-color:grey;
+    transition:background-color 3s ease 0s,background-color 3s ease-out 0s;
+}
+
+    

@@ -1,7 +1,7 @@
 // import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { filterContinents } from '../../redux/actions'
-import s from '../Order/Order.module.css'
+import s from './Filter.module.css'
 
 
 function Filter() {
@@ -14,7 +14,7 @@ function Filter() {
     }
 
     return (    
-    <select onChange={(e) => onSelectChange(e)} className={s.Filters}>
+    <select onChange={(e) => onSelectChange(e)} className={s.SelecConti}>
         <option value="ALL">ALL</option>        
         {continents?.map((c) => {
             return(

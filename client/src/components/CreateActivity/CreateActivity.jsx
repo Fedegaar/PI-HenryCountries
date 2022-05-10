@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { getCountries } from '../../redux/actions';
 import s from'./CreateActivity.module.css'
 import { useForm } from './useForm';
@@ -8,7 +8,8 @@ import { useForm } from './useForm';
         name: "",
         difficulty: "",
         duration: "",
-        season: "",   
+        season: "", 
+        countries: []  
     }
     
     const validationsForm = (form) => {
@@ -36,11 +37,12 @@ function CreateActivity() {
     const {
         form,
         errors,
-        loading,
-        response,
+        // loading,
+        // response,
         handleChange,
         handleBlur,
-        handleSubmit
+        handleSubmit,
+        handleSelect
     } = useForm(initialForm, validationsForm)
 
 
@@ -50,73 +52,20 @@ function CreateActivity() {
         }
     },[dispatch,countries.length])
 
-    // const [input, setInput] = useState({
-    //     name: "",
-    //     difficulty: "",
-    //     duration: "",
-    //     season: "",        
-    // })
-
-    // const [errors, setErrors] = useState({});
-
-    // function validate(input){
-    //     let errors = {};
-    //     if (!input.name){
-    //         errors.name = 'Activity name is required';
-    //     } 
-    //     if (!input.duration){
-    //         errors.duration = 'Duration is required';
-    //     }
-    //     if (!input.season){
-    //         errors.season = 'Season is required';
-    //     } 
-    //     return errors
-    // };
-
-    // const handleInputChange = function (e) {
-    //     e.preventDefault()
-    //     const { name, value } = e.target
-    //     setInput({
-    //         ...input,
-    //         name : value
-    //     });
-    //     setErrors(validate({
-    //         ...input,
-    //         name: value
-    //     }))
-    // }
-
-
-    // const handleInputSubmit = function(e){
-    //     e.preventDefault()
-    //     if(Object.keys(errors).length === 0){
-    //         let body = {
-    //             ...input
-    //         }
-    //         dispatchEvent(CreateActivity(body))
-    //         setInput({
-    //             name: "",
-    //             difficulty: 1,
-    //             duration: "",
-    //             season: "",
-
-    //         })
-    //     }
-    // }
-
-
   return (
     <div className={s.DivMay}>
         
+        
         <div className={s.Box}>
+            <p>CREATE NEW ACTIVITY</p>
         
             <form onSubmit={handleSubmit} className={s.Form}>
-                    
+                                       
                     
                     
                     <div className={s.Inputs}>
                         <label>Activity's name:  </label>
-                        <input type="text" size="20" name="name" onChange={handleChange} value={form.name} onBlur={handleBlur} className={errors.name && s.IDanger}></input>
+                        <input  type="text" size="20" name="name" onChange={handleChange} value={form.name} onBlur={handleBlur} className={s.IInputs}></input>
                     </div>
                     {errors.name && <p className={s.Errors}>⛔ {errors.name}</p> }
 
@@ -125,7 +74,14 @@ function CreateActivity() {
                     
                     <div>
                         <label>Difficulty: </label>
-                        <input type="number" size="20" name="difficulty"  onChange={handleChange} value={form.difficulty} onBlur={handleBlur}></input>
+                        <select className={s.IInputs} name="difficulty" onChange={handleChange} onBlur={handleBlur}>
+                                    <option value ="Select a difficulty">Select a difficulty</option>
+                                    <option value ="1">1-(Very Easy)</option>
+                                    <option value="2">2-(Easy)</option>
+                                    <option value="3">3-(Medium)</option>
+                                    <option value="4">4-(Hard)</option>
+                                    <option value="5">5-(Very Hard)</option>
+                                </select>
                     </div>
                     {errors.difficulty && <p className={s.Errors}>⛔ {errors.difficulty}</p> }
                     
@@ -134,7 +90,15 @@ function CreateActivity() {
                     
                     <div className={s.Inputs}>
                         <label>Duration: </label>
-                        <input type="text" size="20" name="duration" onChange={handleChange} value={form.duration} onBlur={handleBlur}></input>
+                        <select className={s.IInputs} name="duration" onChange={handleChange} onBlur={handleBlur}>
+                                    <option value ="Select a duration">Select a duration</option>
+                                    <option value ="1 hr">1 hr</option>
+                                    <option value ="1:30 hr">1:30 hr</option>
+                                    <option value="2 hr">2 hr</option>
+                                    <option value="2:30 hr">2:30 hr</option>
+                                    <option value="3 hr">3 hr</option>
+                                    <option value="3:30 hr">3:30 hr</option>
+                                </select>
                     </div>
                     {errors.duration && <p className={s.Errors}>⛔ {errors.duration}</p>}
 
@@ -143,8 +107,8 @@ function CreateActivity() {
                     
                     <div className={s.Inputs}>
                         <label>Season: </label>
-                                <select name="season" onChange={handleChange} onBlur={handleBlur}>
-                                    <option value ="Select">Select</option>
+                                <select className={s.IInputs} name="season" onChange={handleChange} onBlur={handleBlur}>
+                                    <option value ="Select a season">Select a season</option>
                                     <option value ="Summer">Summer</option>
                                     <option value="Autumn">Autumn</option>
                                     <option value="Winter">Winter</option>
@@ -159,27 +123,35 @@ function CreateActivity() {
                     
                     <div className={s.Inputs}>
                         <label>Country: </label>              
-                                <select >
+                                <select className={s.IInputs} onChange={(e) => handleSelect(e)}>
                                     <option>Countries</option>
                                     {countries?.map((c) => {
                                     return(
-                                        <option size="20" key={c.id} name ={c.name} onChange={handleChange} onBlur={handleBlur} >{c.name}</option>
+                                        <option size="20" key={c.id} name ={c.name}  onBlur={handleBlur} >{c.name}</option>
                                     )
                                     })}                     
                                 </select>
                     </div>
-
                     
                     
                     
-                    <div className={s.btn}>              
-                        <input value='Create' type="submit"></input>             
-                        <input value='Reset' type="reset"></input>
+                    
+                    <div >              
+                        <input className={s.Btn} value='Create' type="submit" onSubmit={handleSubmit}></input>             
                     </div>
 
-
-
             </form>
+
+
+            <div className={s.CountrySelectContain} >
+                    
+                        
+                            {form.countries.map((e) => <ol className={s.ContList}><li>{e}</li> </ol>)}
+                        
+                    
+            </div>
+
+
         </div>
     </div>
   )

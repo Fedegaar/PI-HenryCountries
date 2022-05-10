@@ -1,46 +1,29 @@
-import React, { useState } from 'react'
-import s from './SearchBar.module.css'
-import axios from 'axios'
+import React, { useState } from 'react';
+import s from './SearchBar.module.css';
+import { useDispatch } from 'react-redux';
+import { searchByName } from '../../redux/actions';
 
-function SearchBar(props) {
- 
+
+function SearchBar() {
+  // const countries = useSelector(s => s.sortCountries)
   const [search, setSearch] = useState("")
-
+  const dispatch = useDispatch()
   
-  async function onSubmit(e){
-    e.preventDefault();
-    if (search.length){
-      let response = await getCountryId()
-      
-      
-      if(response.id){
-        props.history.push('/countries/detail/' +response.id)
-        
-      } else {
-          
-          
-          alert (response.message)
-      }
-    }
-  }
-
   function onInputChange(e){
-      e.preventDefault()
+      e.preventDefault()      
       setSearch(e.target.value)
-  }
+    }  
   
-  async function getCountryId(){
-    let country = await axios.get ('http://localhost:3001/countries?name=' + search)
-    return country.data
-  }
 
-  return (
-    <div>
-        <form onSubmit={onSubmit}>
-            <input type="text" placeholder='Enter a country' onChange={onInputChange} value={search} />
-            <input type="submit" value="Search" className={s.btn}/>
-        </form>
-    </div>
+  function onSubmit(e){
+    e.preventDefault();
+    dispatch(searchByName(search))
+  }  
+
+  return (    
+    <form onSubmit={onSubmit} > 
+            <input className={s.SearchInput}  type="search" placeholder='Enter a country' onChange={(e) => onInputChange(e)} value={search} />
+    </form >
   )
 }
 

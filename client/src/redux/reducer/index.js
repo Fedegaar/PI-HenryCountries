@@ -1,4 +1,4 @@
-import { GET_COUNTRIES, GET_COUNTRY_DETAIL, CREATE_ACTIVITY, ORDERED_COUNTRIES, FILTER_CONTINENTS } from "../actions"
+import { GET_COUNTRIES, GET_COUNTRY_DETAIL, CREATE_ACTIVITY, ORDERED_COUNTRIES, FILTER_CONTINENTS, SEARCH_BY_NAME, GET_ACTIVITIES } from "../actions"
 
 
 const initialState = {
@@ -7,7 +7,7 @@ const initialState = {
     countryDetail: {},
     sortCountries: [],
     continents: [],
-    filterContinents : []
+    filterContinents: []
 }
 
 export default function reducer (state = initialState, {type, payload}){
@@ -32,9 +32,15 @@ export default function reducer (state = initialState, {type, payload}){
             }
         case CREATE_ACTIVITY:
             return {
-                ...state,
-                // activities: state.activities.concat(payload),                
+                ...state,                    
             }
+
+        case SEARCH_BY_NAME:
+            return {
+                ...state,
+                sortCountries: payload
+            }
+
         case ORDERED_COUNTRIES:
             let orderedCountries = [...state.sortCountries]            
                 if (payload === "ASCENDENT" || payload === "DESCENDENT") {
@@ -81,7 +87,28 @@ export default function reducer (state = initialState, {type, payload}){
                 return {
                     ...state,
                     sortCountries : state.countries
-                }} 
+                }}
+                
+        case GET_ACTIVITIES:
+            let countriByAct = [...state.countries]            
+            let matchCountry = [];
+            console.log(countriByAct)
+            if (payload !== "ACTIVITIES"){                
+                for (let i=0 ; i < countriByAct?.length; i++){                    
+                    if(countriByAct[i].activity === payload){                        
+                        matchCountry.push(countriByAct[i])                        
+                    }
+                }
+                return {
+                    ...state,
+                    sortCountries:matchCountry
+                }
+            } else {
+
+                return {
+                    ...state,
+                    sortCountries : state.countries
+                }}
                    
 
 

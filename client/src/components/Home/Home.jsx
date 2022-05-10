@@ -7,6 +7,8 @@ import Order from '../Order/Order';
 import Filter from '../Filter/Filter'
 import SearchBar from '../SearchBar/SearchBar';
 import s from './Home.module.css'
+import ActivityFilter from '../ActivityFilter/ActivityFilter';
+
 
 
 function Home(props) {
@@ -26,9 +28,14 @@ function Home(props) {
         setcountriesPP(9)
       } else {
         setcountriesPP(10)
+
       }
   }
   
+  function onClick(e){
+    e.preventDefault()
+    dispatch(getCountries())
+  }
 
   useEffect(() => {
     if(!countries.length) {
@@ -40,23 +47,32 @@ function Home(props) {
 
     <div className={s.Background}>
 
-        <div className={s.Filters}>
-            <Order className={s.Filterss}/>
-            <Filter className={s.Filtersss}/>
+        <div className={s.Inputs}>
+            <Order/>
+            <Filter/>
+            <ActivityFilter/>
         </div>
 
 
         <div className={s.DivSearch}>
+              
               <SearchBar
               history={props.history}
               />
+              
           </div>
 
+
+          <div>              
+                <button className={s.Btn}  onClick={onClick}> RESET COUNTRIES </button>            
+          </div>
+          
 
         <Paginado
               countriesPP={countriesPP}
               countries={countries.length}
               paginado={paginado}/>
+
         
 
           <div className={s.Cards}>

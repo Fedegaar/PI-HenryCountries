@@ -3,17 +3,17 @@
     flex-direction: column;
     justify-content: space-around;
     height: 100vh;
-    background-size: cover;
-    background-image:url('https://images.ecestaticos.com/gX65a8RCnHIW0FN7tUQaB_YgeKs=/1x67:1253x769/1600x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fcd1%2F58c%2F368%2Fcd158c368dc7be563cef8eb4bd65071b.jpg');
+    background-color: black;
 }
 .Titulo{
+    background-color: rgba(128, 128, 128, 0.225);
     color: white;
     font-size: 50px;
-    /* background-color: rgba(30, 30, 30, 0.692); */
+
 }
 
 .stiBtn {
-    background-color: #949494; /* Green */
+    background-color: #ffffff; /* Green */
     border: solid 1px rgb(30, 30, 30);
     color: rgb(0, 0, 0);
     padding: 15px 32px;
@@ -26,6 +26,6 @@
     border-radius: 50px;    
 }
 
-.ubiBtn{
-
+.hr{
+    background-color: rgb(7, 235, 7);
 }

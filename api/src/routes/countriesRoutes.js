@@ -29,13 +29,13 @@ router.get('/', async (req, res, next) => {
             reject(err => next(err))
         })
     })
-    if (!name) {
     await Promise.all(promises)    
+    if (!name) {
     let allCountries = await Country.findAll()
     res.send(allCountries);
 } else { 
     try{   
-    let searchCountry = await Country.findOne({        
+    let searchCountry = await Country.findAll({        
         where: {
             name:{
             [Op.iLike]: `%${name}%` 

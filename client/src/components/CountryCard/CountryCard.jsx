@@ -17,8 +17,8 @@ function CountryCard({name, continent, img, id}) {
         </div>
 
 
-        <div className={s.Image}>
-            <img width={275} height={175} src={img} alt={"IMG NOT FOUND"}/>
+        <div >
+            <img className={s.Image} width={275} height={175} src={img} alt={"IMG NOT FOUND"}/>
         </div>
 
 
