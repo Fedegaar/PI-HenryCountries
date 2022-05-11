@@ -8,8 +8,10 @@
     align-items: center;
 }
 
-.Load{
-    font-size: 80px;
+.Loader{
+    display: flex;
+    justify-content: center;
+    padding-left: 560px;
 }
 
 .Cards{

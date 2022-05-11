@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {getCountries} from '../../redux/actions'
+import {getActivities, getCountries} from '../../redux/actions'
 import CountryCard from '../CountryCard/CountryCard';
 import Paginado from '../Paginado/Paginado';
 import Order from '../Order/Order';
+import Loader from '../Loader/Loader'
 import Filter from '../Filter/Filter'
 import SearchBar from '../SearchBar/SearchBar';
 import s from './Home.module.css'
@@ -23,12 +24,11 @@ function Home(props) {
   const currentCountries = countries.slice(indxFirstCountry, indxLastCountry)
 
   const paginado = (pageNum) => {
-      setcurrentPage(pageNum)
+      setcurrentPage(pageNum)      
       if(pageNum === 1){
         setcountriesPP(9)
       } else {
         setcountriesPP(10)
-
       }
   }
   
@@ -40,6 +40,7 @@ function Home(props) {
   useEffect(() => {
     if(!countries.length) {
     dispatch(getCountries())
+    dispatch(getActivities())
     }
   },[dispatch, countries.length])
 
@@ -51,6 +52,10 @@ function Home(props) {
             <Order/>
             <Filter/>
             <ActivityFilter/>
+        </div>
+
+        <div>
+          
         </div>
 
 
@@ -88,7 +93,9 @@ function Home(props) {
               })
           
             ) : (
-                  <span className={s.Load}>Loading...</span>
+              <div className={s.Loader}>
+                <Loader/>
+              </div>
             )}
           </div>
 

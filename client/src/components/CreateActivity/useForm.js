@@ -1,6 +1,7 @@
 import { useState} from 'react'
 import { useDispatch } from 'react-redux';
 import { createActivity } from '../../redux/actions';
+import { useHistory } from 'react-router-dom';
 
 
 export const useForm = (initialForm, validateForm) => {
@@ -10,6 +11,8 @@ export const useForm = (initialForm, validateForm) => {
     // const [response, setResponse] = useState(null);
 
     const dispatch = useDispatch()
+
+    const history = useHistory()
 
     const handleChange = (e) => {
         const {name , value} = e.target        
@@ -34,10 +37,13 @@ export const useForm = (initialForm, validateForm) => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        if(!form.name){
+            e.preventDefault();
+            return alert('Name is required!')
+        }
         setErrors(validateForm(form));
         if (Object.keys(errors).length===0){
-            alert("Sending info")
+            alert("Sending info. Returining to home.")
             dispatch(createActivity(form))
         }
         setForm({
@@ -47,6 +53,7 @@ export const useForm = (initialForm, validateForm) => {
             season: "",
             countries: [] 
         })
+        history.push('/home')
     };
 
     return {

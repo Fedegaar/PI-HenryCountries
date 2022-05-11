@@ -14,12 +14,13 @@ function Nav(props) {
                   <img src={IMG} width={50} alt= "HOME"/>              
               </Link>
           </div>
-
-
+          <div>
+            <h1 className={s.Title}>THE COUNTRY WEB APP</h1>
+          </div>
 
           <div className={s.DivAct}>
               <Link to='/countries/create'>
-                  <img src={IMG2} width={150} alt= "HOME"/> 
+                  <h3 className={s.newAct}>NEW ACTIVITY</h3> 
               </Link>
           </div>
 

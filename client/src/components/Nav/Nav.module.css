@@ -11,20 +11,29 @@
 
 
 .DivImg{
-    margin-top: 8px;
+    margin-top: 15px;
     display: flex;
     padding-left: 50px;
-    left:50px;   
+       
 }   
 
-.DivAct{
-    padding-right: 40px;
+.newAct{    
     display: flex;
-    padding-top: 4px;
+    padding-top: 8px;
+    padding-right: 60px;
     color: white;
+    font-size: 20px;
+    font-family: 'Antonio', sans-serif;
 }
 
 .DivSearch{
     padding-right: 50px;
     align-self: center;
+}
+
+.Title{
+    color: white;
+    display: inline-block;
+    font-family: 'Antonio', sans-serif;  
+    padding-left: 40px;  
 }

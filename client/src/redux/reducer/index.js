@@ -1,4 +1,4 @@
-import { GET_COUNTRIES, GET_COUNTRY_DETAIL, CREATE_ACTIVITY, ORDERED_COUNTRIES, FILTER_CONTINENTS, SEARCH_BY_NAME, GET_ACTIVITIES } from "../actions"
+import { GET_COUNTRIES, GET_COUNTRY_DETAIL, CREATE_ACTIVITY, ORDERED_COUNTRIES, FILTER_CONTINENTS, SEARCH_BY_NAME, GET_ACTIVITIES, FILTER_ACTIVITIES } from "../actions"
 
 
 const initialState = {
@@ -89,28 +89,25 @@ export default function reducer (state = initialState, {type, payload}){
                     sortCountries : state.countries
                 }}
                 
-        case GET_ACTIVITIES:
-            let countriByAct = [...state.countries]            
-            let matchCountry = [];
-            console.log(countriByAct)
-            if (payload !== "ACTIVITIES"){                
-                for (let i=0 ; i < countriByAct?.length; i++){                    
-                    if(countriByAct[i].activity === payload){                        
-                        matchCountry.push(countriByAct[i])                        
-                    }
-                }
+        case GET_ACTIVITIES:                                    
                 return {
                     ...state,
-                    sortCountries:matchCountry
+                    activities:payload                                
+                }
+        
+        case FILTER_ACTIVITIES:
+            if(payload !== "ACTIVITIES"){
+                let cByAct = state.activities.filter((e) => e.name ===payload)
+                console.log("SOY EL CBYACT",cByAct)    
+                return{
+                    ...state,
+                    sortCountries: cByAct[0].countries
                 }
             } else {
-
                 return {
-                    ...state,
-                    sortCountries : state.countries
-                }}
-                   
-
+                    ...state
+                }
+            }
 
         default : return state
     }

@@ -4,7 +4,7 @@ import s from './Paginado.module.css'
 export default function Paginado({ paginado, countries, countriesPP }){
     const pNumbers = []
 
-    for (let i=1 ; i<= Math.ceil(countries/countriesPP); i++){
+    for (let i=1 ; i<= 25; i++){
         pNumbers.push(i)
     }
 

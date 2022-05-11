@@ -7,6 +7,7 @@ export const ORDERED_COUNTRIES = "ORDERED_COUNTRIES"
 export const FILTER_CONTINENTS = "FILTER_CONTINENTS"
 export const SEARCH_BY_NAME = "SEARCH_BY_NAME"
 export const GET_ACTIVITIES = "GET_ACTIVITIES"
+export const FILTER_ACTIVITIES = "FILTER_ACTIVITIES"
 
 
 export const getCountries = () => {
@@ -87,11 +88,18 @@ export const getActivities = () => {
             dispatch({
                 type: GET_ACTIVITIES,
                 payload: result.data
-            })
-            console.log(result)
-            result.send(result)            
+            })                   
         } catch (err) {
             console.log(err)
         }
     }
 }
+
+export const filterActivities = (payload) => {   
+        return {
+        type: FILTER_ACTIVITIES,
+        payload
+        }   
+    
+    }
+

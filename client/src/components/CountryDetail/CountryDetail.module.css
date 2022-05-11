@@ -1,31 +1,38 @@
 
 .Background{
+    margin-top:0%;
     background-size:cover;
     background-image:url('https://wallpaperaccess.com/full/1860753.jpg');
     min-height: 100vh;
-    display: flex;
+    display:flex;
     justify-content: space-around;
         
 }
+.asd{
+    display: inline-block;
+}
 
     .Cardback{
-        margin-top: 100px;
+        margin-left: 200px;
+        margin-top: 70px;
+        margin-bottom: 50px;
+        padding-bottom: 80px;
         display: flex;
         justify-content: space-around;
         flex-direction: column;
         background-color: transparent;
         border-radius: 15px;
         width: 500px;
-        height: 550px;
+        height: 600px;
         border: 4px solid black;
         box-shadow: 1px -1px 19px 8px rgba(0,0,0,1);
         backdrop-filter: blur(7px);
     }
 
     .Name{
-        font-size: 40px;
         color:white;
-        
+        font-family: 'Antonio', sans-serif;
+        font-size: 40px;        
     }
 
     .ID{
@@ -56,6 +63,7 @@
         color:white;
     }
     
-
-
-
+    .Title{
+        font-family: 'Antonio', sans-serif;
+        color: white;
+    }

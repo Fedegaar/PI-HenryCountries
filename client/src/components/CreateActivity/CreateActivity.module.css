@@ -84,6 +84,7 @@
     transition:background-color 3s ease 0s,background-color 3s ease-out 0s;
 }
 
-.CountrySelectContain{
-    
+.tit{
+    font-family: 'Antonio', sans-serif;
+    font-size: 26px;
 }

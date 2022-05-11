@@ -3,7 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getCountries } from '../../redux/actions';
 import s from'./CreateActivity.module.css'
 import { useForm } from './useForm';
+import { useHistory } from 'react-router-dom';
 
+
+
+    
     const initialForm = {
         name: "",
         difficulty: "",
@@ -21,14 +25,16 @@ import { useForm } from './useForm';
         } else if (!form.duration){
             errors.duration = "Activity's duration is required"
         } else if (form.season === "Select"){
-            console.log(form.season)
             errors.season = "Activity's season is required"
         }
+         
         return errors;
     }
 
-function CreateActivity() {    
+
+    function CreateActivity() {    
     
+    const history = useHistory()
 
     const dispatch = useDispatch();
 
@@ -57,7 +63,7 @@ function CreateActivity() {
         
         
         <div className={s.Box}>
-            <p>CREATE NEW ACTIVITY</p>
+            <h3 className={s.tit}>CREATE NEW ACTIVITY</h3>
         
             <form onSubmit={handleSubmit} className={s.Form}>
                                        
@@ -137,7 +143,7 @@ function CreateActivity() {
                     
                     
                     <div >              
-                        <input className={s.Btn} value='Create' type="submit" onSubmit={handleSubmit}></input>             
+                        <input disabled={!form.name} className={s.Btn} value='Create' type="submit" onSubmit={handleSubmit}></input>             
                     </div>
 
             </form>
