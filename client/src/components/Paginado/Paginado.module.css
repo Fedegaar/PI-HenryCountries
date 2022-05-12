@@ -35,7 +35,6 @@ width: 100%;
     border-radius: 8px;
     flex-wrap: wrap;
     backdrop-filter: blur(20px);
-    background-color:blue;
     background-color:black;
     color: white;
 }

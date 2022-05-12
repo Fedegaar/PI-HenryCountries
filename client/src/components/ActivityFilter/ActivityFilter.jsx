@@ -13,7 +13,6 @@ function ActivityFilter() {
     function onSelectChange(e){            
         dispatch(filterActivities(e.target.value))
     }
-    console.log("SOY EL CONSOLELOG", activities)
     return (    
     <select onChange={(e) => onSelectChange(e)} className={s.SelecActi}>
         <option value="ACTIVITIES">ACTIVITIES</option>        

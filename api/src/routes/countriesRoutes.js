@@ -7,8 +7,7 @@ const axios = require ('axios');
 
 
 router.get('/', async (req, res, next) => {
-    const { name } = req.query
-      
+    const { name } = req.query      
     
         let allInfo = await axios.get('https://restcountries.com/v3/all')        
     const promises = allInfo.data?.map(e => {
@@ -31,30 +30,30 @@ router.get('/', async (req, res, next) => {
     })
     await Promise.all(promises)    
     if (!name) {
-    let allCountries = await Country.findAll()
-    res.send(allCountries);
-} else { 
-    try{   
-    let searchCountry = await Country.findAll({        
-        where: {
-            name:{
-            [Op.iLike]: `%${name}%` 
-        }
-        },
-        include:{
-            model : Activity                    
-        } 
-    })
-        if (searchCountry){
+        let allCountries = await Country.findAll()
+        res.send(allCountries);
+    } else { 
+        try{   
+        let searchCountry = await Country.findAll({        
+            where: {
+                name:{
+                [Op.iLike]: `%${name}%` 
+            }
+            },
+            include:{
+                model : Activity                    
+            } 
+        })
+        if (searchCountry.length){
             res.send(searchCountry)
         } else {
             res.send({message: 'Country not found'})
         }
      
-} catch (err){
-    next(err)
-}
-}            
+        } catch (err){
+            next(err)
+        }
+    }            
 
 });
 
@@ -74,7 +73,7 @@ router.get('/:code', async (req, res, next) => {
         if (country){
             res.send(country)
         } else {
-            res.send({message: 'No se encontro el pais'})
+            res.send({message: 'Country not found'})
         }
     } else {
         country = await axios.get('https://restcountries.com/v3/alpha/'+ code)

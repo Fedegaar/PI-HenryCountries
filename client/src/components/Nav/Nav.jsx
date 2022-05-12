@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import s from './Nav.module.css'
 import IMG from '../../img/image (1).png'
-import IMG2 from '../../img/NEW ACTIVITY.png'
 
 function Nav(props) {
   return (

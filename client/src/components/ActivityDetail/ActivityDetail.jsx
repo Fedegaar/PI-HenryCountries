@@ -10,8 +10,7 @@ function ActivityDetail({name, id, difficulty, duration, season}) {
 
     useEffect(() => {
         dispatch(getActivities())
-        console.log(act)
-    },[dispatch])
+    },[dispatch, act])
 
 
   return (

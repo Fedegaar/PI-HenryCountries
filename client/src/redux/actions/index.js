@@ -27,15 +27,14 @@ export const getCountries = () => {
 
 export const getCountryDetail = (id) => {
     return async function (dispatch) {
-        await axios.get('http://localhost:3001/countries/' + id)
-        .then((detail) => {
+        let detail = await axios.get('http://localhost:3001/countries/' + id)
             dispatch ({
                 type: GET_COUNTRY_DETAIL,
                 payload: detail.data
-            })
-        })
+            })        
     }
 }
+
 
 export const orderedCountries = (order) => {
     return {
@@ -48,10 +47,13 @@ export const searchByName = (name) => {
     return async function (dispatch){
         try {
             let result = await axios.get('http://localhost:3001/countries?name=' + name)
+            if (result.data.message){
+                alert (result.data.message)
+            } else {
             return dispatch({
                 type: SEARCH_BY_NAME,
                 payload: result.data
-            })
+            })}
         } catch(err){
             console.log(err)
         }

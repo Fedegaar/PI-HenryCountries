@@ -1,17 +1,14 @@
 import { useState} from 'react'
 import { useDispatch } from 'react-redux';
-import { createActivity } from '../../redux/actions';
+import { createActivity, getActivities } from '../../redux/actions';
 import { useHistory } from 'react-router-dom';
 
 
 export const useForm = (initialForm, validateForm) => {
     const [form, setForm] = useState(initialForm);
     const [errors, setErrors] = useState({});
-    // const [loading, setLoading] = useState(false);
-    // const [response, setResponse] = useState(null);
 
     const dispatch = useDispatch()
-
     const history = useHistory()
 
     const handleChange = (e) => {
@@ -35,6 +32,13 @@ export const useForm = (initialForm, validateForm) => {
         })
         }
     }
+    const handleClose = (c) => {
+        setForm({
+            ...form,
+            countries: form.countries.filter(c => c !== c.name)
+        });
+      }
+
 
     const handleSubmit = (e) => {
         if(!form.name){
@@ -45,7 +49,8 @@ export const useForm = (initialForm, validateForm) => {
         if (Object.keys(errors).length===0){
             alert("Sending info. Returining to home.")
             dispatch(createActivity(form))
-        }
+            dispatch(getActivities())
+        
         setForm({
             name: "",
             difficulty: "",
@@ -54,6 +59,10 @@ export const useForm = (initialForm, validateForm) => {
             countries: [] 
         })
         history.push('/home')
+        } else {
+            e.preventDefault();
+            alert ("Errors found on form, please check")
+        }
     };
 
     return {
@@ -64,6 +73,7 @@ export const useForm = (initialForm, validateForm) => {
         handleChange,
         handleBlur,
         handleSubmit,
-        handleSelect
+        handleSelect,
+        handleClose
     };
 };

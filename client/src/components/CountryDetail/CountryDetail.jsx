@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getActivities, getCountryDetail } from '../../redux/actions'
+import {  getCountryDetail } from '../../redux/actions'
 import ActivityDetail from '../ActivityDetail/ActivityDetail';
 import Loader from '../Loader/Loader';
 import s from './CountryDetail.module.css'
@@ -12,8 +12,7 @@ function CountryDetail(props) {
    
 
     useEffect(() => {
-        dispatch(getCountryDetail(url))
-        dispatch(getActivities())
+        dispatch(getCountryDetail(url))        
     },[dispatch, url])
     
 
@@ -23,7 +22,6 @@ function CountryDetail(props) {
         )
     }
 
-    console.log("DETALLE",detail.activities)
 
     return (
         <div className={s.Background}>

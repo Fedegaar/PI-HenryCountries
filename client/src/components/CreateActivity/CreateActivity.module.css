@@ -88,3 +88,21 @@
     font-family: 'Antonio', sans-serif;
     font-size: 26px;
 }
+
+.CBut{   
+    float: left;
+    font-size: 10px;
+    padding: 3px 10px;
+    margin-right: 5px;    
+    border: solid 1px black;
+    border-radius: 8px;
+    flex-wrap: wrap;
+    backdrop-filter: blur(20px);
+    background-color:black;
+    color: white;
+}
+
+.CBut:hover{
+background-color:rgb(91, 90, 90);
+transition:background-color 3s ease 0s,background-color 3s ease-out 0s;
+}

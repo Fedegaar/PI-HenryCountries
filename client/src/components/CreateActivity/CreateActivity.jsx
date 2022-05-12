@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getCountries } from '../../redux/actions';
 import s from'./CreateActivity.module.css'
 import { useForm } from './useForm';
-import { useHistory } from 'react-router-dom';
+
 
 
 
@@ -18,8 +18,13 @@ import { useHistory } from 'react-router-dom';
     
     const validationsForm = (form) => {
         let errors = {};
+        let regexName =/^[a-zA-Z].*[\s.]*$/g;
         if (!form.name.trim()){
             errors.name = "Activity's name is required"
+        } else if (!regexName.test(form.name)){
+            errors.name = "Activity's name is incorrect"
+        } else if (form.name.trim().length>30){
+            errors.name = "Activity's name is too long" 
         } else if (!form.difficulty){
             errors.difficulty = "Difficulty's duration is required"
         } else if (!form.duration){
@@ -32,9 +37,8 @@ import { useHistory } from 'react-router-dom';
     }
 
 
-    function CreateActivity() {    
+    function CreateActivity() {   
     
-    const history = useHistory()
 
     const dispatch = useDispatch();
 
@@ -48,7 +52,8 @@ import { useHistory } from 'react-router-dom';
         handleChange,
         handleBlur,
         handleSubmit,
-        handleSelect
+        handleSelect,
+        handleClose
     } = useForm(initialForm, validationsForm)
 
 
@@ -143,7 +148,7 @@ import { useHistory } from 'react-router-dom';
                     
                     
                     <div >              
-                        <input disabled={!form.name} className={s.Btn} value='Create' type="submit" onSubmit={handleSubmit}></input>             
+                        <input disabled={errors & errors} className={s.Btn} value='Create' type="submit" onSubmit={handleSubmit}></input>             
                     </div>
 
             </form>
@@ -152,7 +157,7 @@ import { useHistory } from 'react-router-dom';
             <div className={s.CountrySelectContain} >
                     
                         
-                            {form.countries.map((e) => <ol className={s.ContList}><li>{e}</li> </ol>)}
+                            {form.countries.map((e) => <ol key={e} className={s.ContList}><li><button className={s.CBut} onClick={handleClose}>X</button>{e}</li></ol>)}
                         
                     
             </div>

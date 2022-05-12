@@ -3,7 +3,6 @@ import s from './LandingPage.module.css'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
-import IMGLANDING from '../../img/The Country Web App.png'
 import { getActivities, getCountries } from '../../redux/actions'
 
 function LandingPage() {
@@ -13,7 +12,7 @@ function LandingPage() {
   useEffect(() => {  
     dispatch(getCountries())  
     dispatch(getActivities())
-  },[dispatch,])
+  },[dispatch])
 
   return (
     <div className={s.divMayor}>
