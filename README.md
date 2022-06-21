@@ -22,6 +22,12 @@ Recuerdo que cuando empece el proyecto todos mis conocimientos estaban "en el ai
 habia aprendido.
 Pude reafirmar los conocimientos por ejemplo en Promesas, Async/Await, React, Redux. Como asi tambien la logica misma para aplicada a mostrar lo tangible,
 que en este caso serian las Actividades por paises y los Paises mismos.
+Tecnologias que utilice:
+-JavaScript-
+-CSS Modules-
+-React-
+-Redux-
+
 
 
 ## Conclusion
@@ -33,6 +39,7 @@ Fue solo el comienzo para lo que vendria despues!
 ## Algunas imagenes
 
 <h4>Home.</h4>
+
  <img src='./img/WEBAPP1.png'>
 
  <h4>Todos los paises.</h4>
