@@ -1,12 +1,4 @@
-<p align='left'>
-    <img src='https://static.wixstatic.com/media/85087f_0d84cbeaeb824fca8f7ff18d7c9eaafd~mv2.png/v1/fill/w_160,h_30,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG.webp' </img>
-</p>
 
-# Individual Project - Henry Countries
-
-<p align="left">
-  <img height="200" src="./countries.png" />
-</p>
 
 ## Project's goals
 In this individual project at Henry I had the opportunity to apply everything I learned in these 5 months. It should be noted that in it we were not allowed to use libraries, everything had to be "pure". The idea was to create a SPA (Single Page Application) that shows me relevant information from approximately 250 countries. I got them from an API that Henry provided me. Likewise, this information was stored in a database, and from there it was manipulated, to show it or add tourist activities to each country.
