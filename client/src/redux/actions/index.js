@@ -8,6 +8,7 @@ export const FILTER_CONTINENTS = "FILTER_CONTINENTS"
 export const SEARCH_BY_NAME = "SEARCH_BY_NAME"
 export const GET_ACTIVITIES = "GET_ACTIVITIES"
 export const FILTER_ACTIVITIES = "FILTER_ACTIVITIES"
+export const DELETE_ACTIVITY = "DELETE_ACTIVITY"
 
 
 export const getCountries = () => {
@@ -104,4 +105,11 @@ export const filterActivities = (payload) => {
         }   
     
     }
+
+export const deleteActivity = (payload) => {
+    return {
+    type: DELETE_ACTIVITY,
+    payload
+    }
+}
 

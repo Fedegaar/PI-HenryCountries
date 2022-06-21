@@ -1,5 +1,4 @@
 .Cardback{
-
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -13,9 +12,15 @@
     backdrop-filter: blur(7px);
 }
 
+.Cardback:hover{
+    background-color: rgba(249, 249, 249, 0.318);
+    transition:background-color 3s ease 0s,background-color 1s ease-out 0s;
+}
+
 .NNombre {
     margin-top: 30px;
     margin-bottom: 10px;
+    font-family: 'Antonio', sans-serif; 
 }
 
 .Nombre{    
@@ -23,6 +28,7 @@
     text-decoration: none;
     color: white;
     margin-top: 15px;
+    font-family: 'Antonio', sans-serif; 
 }
 
 
@@ -35,4 +41,6 @@
 .Continente{
     font-size: 20px;
     height: 20%;
+    color: white;
+    font-family: 'Antonio', sans-serif; 
 }

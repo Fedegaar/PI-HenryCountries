@@ -16,7 +16,6 @@ function Home(props) {
   let countries = useSelector(state => state.sortCountries);
   const dispatch = useDispatch();
 
-  // const allCountries = useSelector((s) => s.countries);
   const [currentPage, setcurrentPage] = useState(1);
   const [countriesPP, setcountriesPP] = useState(9);
   const indxLastCountry = currentPage * countriesPP;
@@ -50,7 +49,8 @@ function Home(props) {
 
         <div className={s.Inputs}>
             <Order/>
-            <Filter/>
+            <Filter
+            setcurrentPage={setcurrentPage}/>
             <ActivityFilter/>
         </div>
 

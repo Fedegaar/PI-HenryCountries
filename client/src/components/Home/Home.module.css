@@ -1,11 +1,9 @@
 .Background{
     height: 100vh;
-    background-color: rgb(255, 255, 255);    
-    background-size:cover;
+    background-color: rgb(255, 255, 255);
     background-image:url('https://wallpaperaccess.com/full/1860753.jpg'); 
-    background-attachment: fixed; 
     overflow: scroll;
-    align-items: center;
+    
 }
 
 .Loader{
@@ -30,14 +28,19 @@
 .Btn{
     border-radius: 15px;
     padding: 5px;
-    margin: 5px;    
+    height: 3rem;
+    font-size: 15px;
+    width: 8rem;
+    margin: 20px;    
     background-color:black;
     color: white;
+    font-family: 'Antonio', sans-serif; 
 }
 
 .Btn:hover{
-    background-color:grey;
-    transition:background-color 3s ease 0s,background-color 3s ease-out 0s;
+    background-color:rgba(249, 249, 249, 0.318);
+    transition:background-color 3s ease 0s,background-color 1s ease-out 0s;
+    cursor: pointer;     
 }
 
     

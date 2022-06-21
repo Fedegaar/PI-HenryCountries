@@ -73,15 +73,19 @@
     border-radius: 15px;
     padding: 5px;
     margin: 5px;
+    width: 4rem;
+    height: 3rem;
     background-color:blue;
     background-color:black;
     color: white;
+    cursor: pointer;
+    font-family: 'Antonio', sans-serif;
 }
 
 .Btn:hover{
-    background-color:yellow;
-    background-color:grey;
-    transition:background-color 3s ease 0s,background-color 3s ease-out 0s;
+    background-color:rgba(249, 249, 249, 0.318);
+    transition:background-color 3s ease 0s,background-color 1s ease-out 0s;
+
 }
 
 .tit{

@@ -3,10 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getCountries } from '../../redux/actions';
 import s from'./CreateActivity.module.css'
 import { useForm } from './useForm';
-
-
-
-
     
     const initialForm = {
         name: "",
@@ -47,8 +43,6 @@ import { useForm } from './useForm';
     const {
         form,
         errors,
-        // loading,
-        // response,
         handleChange,
         handleBlur,
         handleSubmit,

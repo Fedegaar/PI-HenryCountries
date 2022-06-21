@@ -10,7 +10,7 @@ router.get('/', async (req, res, next) => {
     const { name } = req.query      
     
         let allInfo = await axios.get('https://restcountries.com/v3/all')        
-    const promises = allInfo.data?.map(e => {
+        const promises = allInfo.data?.map(e => {
         new Promise (async (resolve, reject) => {            
             resolve(
                 await Country.findOrCreate({

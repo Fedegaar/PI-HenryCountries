@@ -4,13 +4,14 @@ import { filterContinents } from '../../redux/actions'
 import s from './Filter.module.css'
 
 
-function Filter() {
+function Filter({setcurrentPage}) {
     const continents = useSelector((state) => state.continents)
 
     const dispatch = useDispatch()
 
     function onSelectChange(e){            
-            dispatch(filterContinents(e.target.value))                
+            dispatch(filterContinents(e.target.value))
+            setcurrentPage(1)               
     }
 
     return (    

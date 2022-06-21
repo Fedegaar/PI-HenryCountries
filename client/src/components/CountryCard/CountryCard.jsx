@@ -4,11 +4,12 @@ import s from './CountryCard.module.css'
 
 function CountryCard({name, continent, img, id}) {
     return (
+    <Link to={`/countries/detail/${id}`}>
     <div className={s.Cardback}>
 
 
         <div className={s.Nombre}>
-            <Link to={`/countries/detail/${id}`} className={s.Nombre}><span>{name}</span></Link>
+            <span className={s.Nombre}>{name}</span>
         </div>
 
 
@@ -23,6 +24,7 @@ function CountryCard({name, continent, img, id}) {
 
 
     </div>
+    </Link>
   )
 }
 

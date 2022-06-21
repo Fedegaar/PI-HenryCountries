@@ -49,7 +49,7 @@ export const useForm = (initialForm, validateForm) => {
         if (Object.keys(errors).length===0){
             alert("Sending info. Returining to home.")
             dispatch(createActivity(form))
-            dispatch(getActivities())
+            
         
         setForm({
             name: "",
@@ -59,6 +59,7 @@ export const useForm = (initialForm, validateForm) => {
             countries: [] 
         })
         history.push('/home')
+        dispatch(getActivities())
         } else {
             e.preventDefault();
             alert ("Errors found on form, please check")

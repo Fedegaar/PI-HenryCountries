@@ -1,4 +1,4 @@
-import { GET_COUNTRIES, GET_COUNTRY_DETAIL, CREATE_ACTIVITY, ORDERED_COUNTRIES, FILTER_CONTINENTS, SEARCH_BY_NAME, GET_ACTIVITIES, FILTER_ACTIVITIES } from "../actions"
+import { GET_COUNTRIES, GET_COUNTRY_DETAIL, CREATE_ACTIVITY, ORDERED_COUNTRIES, FILTER_CONTINENTS, SEARCH_BY_NAME, GET_ACTIVITIES, FILTER_ACTIVITIES, DELETE_ACTIVITY } from "../actions"
 
 
 const initialState = {
@@ -109,6 +109,11 @@ export default function reducer (state = initialState, {type, payload}){
                 }
             }
 
+        case DELETE_ACTIVITY:
+            return {
+                ...state,
+                activities:payload                                
+            }
 
         default : return state
     }

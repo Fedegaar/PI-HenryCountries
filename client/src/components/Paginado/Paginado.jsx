@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Paginado.module.css'
 
-export default function Paginado({ paginado, countries, countriesPP }){
+export default function Paginado({ paginado, countries }){
     const pNumbers = []
 
     for (let i=1 ; i<= Math.ceil(countries/10); i++){
@@ -21,5 +21,5 @@ export default function Paginado({ paginado, countries, countriesPP }){
                 </ul>
             </nav>
         </div>
-            )
+    )
 }
