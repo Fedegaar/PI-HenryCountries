@@ -28,3 +28,21 @@ que en este caso serian las Actividades por paises y los Paises mismos.
 Realmente en esta etapa pude aplicar la mayoria de las tecnologias que aprendí.
 Por lo cual me diverti muchisimo haciendolo, y sobre todo, se disfrutó!
 Fue solo el comienzo para lo que vendria despues!
+
+
+## Algunas imagenes
+
+<h4>Home.</h4>
+ <img src='./img/WEBAPP1.png'>
+
+ <h4>Todos los paises.</h4>
+ <img src='./img/WEBAPP2.png'>
+
+ <h4>Crear nueva actividad.</h4>
+ <img src='./img/WEBAPP3.png'>
+
+ <h4>Detalle de Pais</h4>
+ <img src='./img/WEBAPP4.png'>
+
+ <h4>Vista de activdad en pais</h4>
+ <img src='./img/WEBAPP5.png'>
