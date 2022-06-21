@@ -12,6 +12,9 @@
 En este proyecto individual en Henry tuve la oportunidad de aplicar todo aquello aprendido a lo largo de estos
 5 largos meses de aprendizaje.
 Cabe destacar que en el mismo no teniamos permitido usar librerias, todo debia ser "puro".
+La idea fue crear una SPA(Single Page Application) que me muestre informacion relevante de aproximadamente 250 paises.
+Los mismos los obtuve de una API que Henry me facilito.
+Asi mismo, se guardo esa informacion en una base de datos, y desde alli se manipulo, para mostrarla o agregarle actividades turisticas a cada pais.
 
 
 ## Aprendizajes
