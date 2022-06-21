@@ -36,7 +36,7 @@ Further down we can see a series of filters and tools that will allow us to orde
 
  <hr />
 
- <h3>Todos los paises.</h3>
+ <h3>All countries</h3>
 
  <p>This section is where we can see a list of 10 countries on the first page, and 9 for the rest of the pages. (Condition that Henry required to approve the project)</p>
  <img src='./img/WEBAPP2.png'>
