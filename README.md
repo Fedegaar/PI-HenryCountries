@@ -8,41 +8,56 @@
   <img height="200" src="./countries.png" />
 </p>
 
-## Objetivos del Proyecto
-En este proyecto individual en Henry tuve la oportunidad de aplicar todo aquello aprendido a lo largo de estos
-5 largos meses de aprendizaje.
-Cabe destacar que en el mismo no teniamos permitido usar librerias, todo debia ser "puro".
-La idea fue crear una SPA(Single Page Application) que me muestre informacion relevante de aproximadamente 250 paises.
-Los mismos los obtuve de una API que Henry me facilito.
-Asi mismo, se guardo esa informacion en una base de datos, y desde alli se manipulo, para mostrarla o agregarle actividades turisticas a cada pais.
+## Project's goals
+In this individual project at Henry I had the opportunity to apply everything I learned in these 5 months. It should be noted that in it we were not allowed to use libraries, everything had to be "pure". The idea was to create a SPA (Single Page Application) that shows me relevant information from approximately 250 countries. I got them from an API that Henry provided me. Likewise, this information was stored in a database, and from there it was manipulated, to show it or add tourist activities to each country.
 
+<hr />
 
-## Aprendizajes
-Recuerdo que cuando empece el proyecto todos mis conocimientos estaban "en el aire", por lo que pude terminar de asentarlos, uniendo todo lo que
-habia aprendido.
-Pude reafirmar los conocimientos por ejemplo en Promesas, Async/Await, React, Redux. Como asi tambien la logica misma para aplicada a mostrar lo tangible,
-que en este caso serian las Actividades por paises y los Paises mismos.
+## Learnings
+I remember that when I started the project all my knowledge was "up in the air", so I was able to finish settling it, uniting everything I had learned.
+I was able to reaffirm the knowledge, for example, Promises, Async/Await, React, Redux. As well as the same logic to be applied to show the tangible, which in this case would be the Activities by countries and the Countries themselves.
 
+<hr />
 
 ## Conclusion
-Realmente en esta etapa pude aplicar la mayoria de las tecnologias que aprendí.
-Por lo cual me diverti muchisimo haciendolo, y sobre todo, se disfrutó!
-Fue solo el comienzo para lo que vendria despues!
+Actually at this stage I was able to apply most of the technologies I learned.
+Which is why I had a lot of fun doing it, and most of all, I enjoyed it!
+It was just the beginning of what was to come!
 
+<hr />
 
 ## Algunas imagenes
 
-<h4>Home.</h4>
+<h3>Home.</h3>
+<p>The main view contains a Navigation Bar, it has a search bar to search for countries by their names.
+Further down we can see a series of filters and tools that will allow us to order the countries by name or population. There are also pagination buttons, they will allow us to navigate between the pages and between the more than 200 countries. </p>
+
  <img src='./img/WEBAPP1.png'>
 
- <h4>Todos los paises.</h4>
+ <hr />
+
+ <h3>Todos los paises.</h3>
+
+ <p>This section is where we can see a list of 10 countries on the first page, and 9 for the rest of the pages. (Condition that Henry required to approve the project)</p>
  <img src='./img/WEBAPP2.png'>
 
- <h4>Crear nueva actividad.</h4>
+ <hr />
+
+ <h3>New Activity</h3>
+ <p> Here we can create an activity for the countries we want. being able to choose
+ its difficulty, duration, practice season and the countries to which we want to assign said activity.</p>
+
  <img src='./img/WEBAPP3.png'>
 
- <h4>Detalle de Pais</h4>
+ <hr />
+
+ <h3>Country Detail</h3>
+ <p>The detail of the country will be the module of the app in charge of showing me data of the selected country, such as its population density, its capital, among others.</p>
  <img src='./img/WEBAPP4.png'>
 
- <h4>Vista de activdad en pais</h4>
+ <hr />
+
+ <h3>View of activity in country</h3>
+ <p>Below the detail of the country we will be able to visualize the activities linked to the country in question, if it has them.</p>
+
  <img src='./img/WEBAPP5.png'>
