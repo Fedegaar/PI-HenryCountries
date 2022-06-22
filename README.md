@@ -7,22 +7,19 @@ In this individual project at Henry I had the opportunity to apply everything I 
 
 ## Learnings
 I remember that when I started the project all my knowledge was "up in the air", so I was able to finish settling it, uniting everything I had learned.
-I was able to reaffirm the knowledge, for example, Promises, Async/Await, React, Redux. As well as the same logic to be applied to show the tangible, which in this case would be the Activities by countries and the Countries themselves.
+I was able to consolidate my knowledge in several technologies such us Promises, Async/Await, React, Redux. 
 
 <hr />
 
 ## Conclusion
-Actually at this stage I was able to apply most of the technologies I learned.
-Which is why I had a lot of fun doing it, and most of all, I enjoyed it!
-It was just the beginning of what was to come!
+Actually at this point I was able to apply most of the technologies I learned. That's why I wasn't only learning, I also enjoyed it a lot! It was just the beginning of a long journey!
 
 <hr />
 
-## Algunas imagenes
+## Some screenshots
 
 <h3>Home.</h3>
-<p>The main view contains a Navigation Bar, it has a search bar to search for countries by their names.
-Further down we can see a series of filters and tools that will allow us to order the countries by name or population. There are also pagination buttons, they will allow us to navigate between the pages and between the more than 200 countries. </p>
+<p>The main view contains a Navigation Bar, it has a text field to search for countries by their names. It also has some filters and tools that will allow us to order the countries by name or population. There are also pagination buttons, they will allow us to navigate between the pages and between the more than 200 countries. </p>
 
  <img src='./img/WEBAPP1.png'>
 
