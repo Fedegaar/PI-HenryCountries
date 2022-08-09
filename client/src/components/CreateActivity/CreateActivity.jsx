@@ -35,9 +35,9 @@ import { useForm } from './useForm';
 
     function CreateActivity() {   
     
-
+    
     const dispatch = useDispatch();
-
+    
     const countries = useSelector((state) => state.countries)
 
     const {
@@ -47,7 +47,7 @@ import { useForm } from './useForm';
         handleBlur,
         handleSubmit,
         handleSelect,
-        handleClose
+        handleDelete
     } = useForm(initialForm, validationsForm)
 
 
@@ -151,7 +151,7 @@ import { useForm } from './useForm';
             <div className={s.CountrySelectContain} >
                     
                         
-                            {form.countries.map((e) => <ol key={e} className={s.ContList}><li><button className={s.CBut} onClick={handleClose}>X</button>{e}</li></ol>)}
+                            {form.countries.map((e) => <ol key={e} className={s.ContList}><li><button className={s.CBut} onClick={()=>handleDelete(e)}>X</button>{e}</li></ol>)}
                         
                     
             </div>

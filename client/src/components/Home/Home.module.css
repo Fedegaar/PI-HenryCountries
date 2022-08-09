@@ -2,25 +2,33 @@
     height: 100vh;
     background-color: rgb(255, 255, 255);
     background-image:url('https://wallpaperaccess.com/full/1860753.jpg'); 
-    overflow: scroll;
-    
+    overflow: scroll; 
+    align-items: center;
+    justify-content: center;
+}
+.Inputs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0%;
 }
 
 .Loader{
     display: flex;
     justify-content: center;
     padding-left: 560px;
+    align-items: center;
 }
 
 .Cards{
     padding-top: 50px;
     font-size: 26px;
-    color: white;
-    display:grid;    
+    color: white;  
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;   
     padding-left: 5%;
     padding-bottom: 150px;
 }
@@ -44,3 +52,12 @@
 }
 
     
+.FirstBox {
+    margin-top: 1%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60rem;
+    margin-left: 15%;
+}

@@ -22,7 +22,7 @@ function SearchBar() {
 
   return (    
     <form onSubmit={onSubmit} > 
-            <input className={s.SearchInput}  type="search" placeholder='Enter a country' onChange={(e) => onInputChange(e)} value={search} />
+            <input className={s.SearchInput}  type="search" placeholder='Search a country' onChange={(e) => onInputChange(e)} value={search} />
     </form >
   )
 }

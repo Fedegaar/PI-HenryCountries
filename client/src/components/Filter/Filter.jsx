@@ -14,15 +14,17 @@ function Filter({setcurrentPage}) {
             setcurrentPage(1)               
     }
 
-    return (    
-    <select onChange={(e) => onSelectChange(e)} className={s.SelecConti}>
-        <option value="ALL">ALL</option>        
-        {continents?.map((c) => {
-            return(
-                <option key={c} name ="filter"  value={c}>{c}</option>
-            )
-            })}      
-    </select>    
+    return ( 
+    <div className={s.Order}>   
+        <select onChange={(e) => onSelectChange(e)} className={s.Inputs}>
+            <option value="ALL">ALL</option>        
+            {continents?.map((c) => {
+                return(
+                    <option key={c} name ="filter"  value={c}>{c}</option>
+                )
+                })}      
+        </select>    
+    </div>
     )
 }
 

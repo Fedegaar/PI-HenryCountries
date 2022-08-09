@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {  deleteActivity, getCountryDetail } from '../../redux/actions'
+import { getCountryDetail } from '../../redux/actions'
 import ActivityDetail from '../ActivityDetail/ActivityDetail';
 import Loader from '../Loader/Loader';
 import s from './CountryDetail.module.css'
@@ -14,10 +14,6 @@ function CountryDetail(props) {
     useEffect(() => {
         dispatch(getCountryDetail(url))        
     },[dispatch, url])
-
-    function onClose(){
-        dispatch(deleteActivity)
-    }
     
 
     if (!detail.id){
@@ -77,6 +73,7 @@ function CountryDetail(props) {
                     </div>
                         
                         
+                    { detail.activities ?
                     <div>
                                 <h1 className={s.Title}>TOURIST ACTIVITIES:</h1> {detail.activities?.map((act)=> {
                                                             return <ActivityDetail
@@ -89,7 +86,9 @@ function CountryDetail(props) {
                                                             />
                                                         })}                                                        
                             
-                    </div>    
+                    </div>
+                    : ""  
+                    }  
                 
             </div>
 

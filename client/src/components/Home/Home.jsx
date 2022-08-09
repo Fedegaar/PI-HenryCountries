@@ -46,32 +46,32 @@ function Home(props) {
   return (
 
     <div className={s.Background}>
+        <div className={s.FirstBox}>
+            <div>              
+                  <button className={s.Btn}  onClick={onClick}> RESET COUNTRIES </button>            
+            </div>
+            <div className={s.Inputs}>
+                <Order/>
+                <Filter
+                setcurrentPage={setcurrentPage}/>
+                <ActivityFilter/>
+            </div>
 
-        <div className={s.Inputs}>
-            <Order/>
-            <Filter
-            setcurrentPage={setcurrentPage}/>
-            <ActivityFilter/>
-        </div>
-
-        <div>
-          
-        </div>
-
-
-        <div className={s.DivSearch}>
+            <div>
               
-              <SearchBar
-              history={props.history}
-              />
-              
-          </div>
+            </div>
 
 
-          <div>              
-                <button className={s.Btn}  onClick={onClick}> RESET COUNTRIES </button>            
+            <div className={s.DivSearch}>
+                  
+                  <SearchBar
+                  history={props.history}
+                  />
+                  
+              </div>
+
+
           </div>
-          
 
         <Paginado
               countriesPP={countriesPP}
@@ -88,7 +88,8 @@ function Home(props) {
                 id = {c.id}              
                 name = {c.name}              
                 continent = {c.continent}
-                img = {c.img}          
+                img = {c.img} 
+                population = {c.population}         
                 />
               })
           

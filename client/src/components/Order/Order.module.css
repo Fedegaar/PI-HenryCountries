@@ -1,9 +1,13 @@
 .Order{
-    border-radius: 10px;
+    width: 20rem;
     margin: 5px;
     border: 5px;
+    padding: 5%;
+    display: flex;
+    justify-content: space-around;
 }
 
-.Filters{
+.Inputs{
     border-radius: 10px;
+    height: 2rem;
 }
